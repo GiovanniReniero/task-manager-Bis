@@ -29,11 +29,11 @@ class TasksController < ApplicationController
     redirect_to show_path(@task)
   end
 
-  # def delete
-    # @task = Task.find(params[:id])
-    # @task.destroy 
-    # reroute to all   
-  # end
+  def delete
+    @task = Task.find(params[:id])
+    @task.destroy 
+    redirect_to tasks_path
+  end
   
 private
 

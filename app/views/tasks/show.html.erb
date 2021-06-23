@@ -7,4 +7,6 @@
 <h2><strong> <%= @task.completed %>   </strong>   </h2>
 
 <%= link_to "edit", edit_task_path %>
+<%= link_to "Remove Task", new_task_path method: :delete%>
+
 <%= link_to "Back to tasks", tasks_path %>
