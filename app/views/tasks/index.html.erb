@@ -1,8 +1,10 @@
 <h3>This is your task/index page</h3>
 
-<% @tasks.each do |task| %>
-  <h3> <strong> <%= task.title %> </strong></h3>
-  <%# <h4> <%= task.detail  </h4> %>
-  <h5>   <%= task.completed %>   </h5>
-  <br>
-<% end %>
+<ul>
+  <% @tasks.each do |task| %>
+  <li><%=link_to "#{task.title}", task_path(task.id) %></li>
+  <%end%>
+</ul>
+
+<%= link_to "Add Task", new_task_path %>
+<%# <%= link_to "Remove Task", new_task_path %> %>

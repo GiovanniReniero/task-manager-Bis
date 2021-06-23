@@ -10,22 +10,31 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new
-    # The above simply creates a new instance of Task, the key value pairs of which need to be defined. Nothing has been saved at this point yet! 
   end
 
   def create
     @task = Task.new(task_params)
     @task.save
-    # the above would work if it were not for a built in security feature from rails which imposes the use of Strong Params.
+    redirect_to tasks_path
+  end
+
+  def edit
+    @task = Task.find(params[:id])
   end
 
   def update
-    @task.find(param[:id])
-    
+    @task = Task.find(params[:id])
+    @task =Task.update(task_params)
+    # redirect to index page
+    redirect_to show_path(@task)
   end
-  
-  
 
+  # def delete
+    # @task = Task.find(params[:id])
+    # @task.destroy 
+    # reroute to all   
+  # end
+  
 private
 
   def task_params
