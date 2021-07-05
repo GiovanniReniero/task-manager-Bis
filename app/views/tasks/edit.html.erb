@@ -1,12 +1,8 @@
 <h3>This is the Edit page</h3>
 
-<%= form_with model: @task do |form| %>
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-  <%= form.label :detail %>
-  <%= form.text_area :detail, size: "32x4" %>
-  <%= form.submit %>
-<% end %>
+<%= render "form" %>
+
+
 
 <%= link_to "Remove Task", task_path, method: :delete,   data: { confirm: "Are you sure?" } %>
 <br>
