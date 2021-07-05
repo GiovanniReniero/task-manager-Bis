@@ -1,7 +1,5 @@
-<%= form_with model: @task do |form| %>
-  <%= form.label :title, "Task Name" %>
-  <%= form.text_field :title %>
-  <%= form.label :detail, "Details" %>
-  <%= form.text_area :detail, size: "32x4"%>
+<%= simple_form_for @task do |form| %>
+  <%= form.input :title %>
+  <%= form.text_area :detail, size: "200x4" %>
   <%= form.submit %>
 <% end %>

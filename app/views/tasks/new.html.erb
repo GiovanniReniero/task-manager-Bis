@@ -1,11 +1,6 @@
 <h3>This is the new entry page</h3>
 
+<%= render "form" %>
 
-<%= form_with model: @task do |form| %>
-  <%= form.label :title, "Task Name" %>
-  <%= form.text_field :title %>
-  <%= form.label :detail, "Details" %>
-  <%= form.text_area :detail, size: "32x4"%>
-  <%= form.submit %>
-<% end %>
+
 
