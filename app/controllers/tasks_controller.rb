@@ -24,12 +24,12 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task =Task.update(task_params)
+    @task.update(task_params)
     # redirect to index page
-    redirect_to show_path(@task)
+    redirect_to task_path(@task)
   end
 
-  def delete
+  def destroy
     @task = Task.find(params[:id])
     @task.destroy 
     redirect_to tasks_path
